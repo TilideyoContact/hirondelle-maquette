@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Chant de l’Hirondelle · Animation musicale pour mariages, fêtes, mairies, bars et restaurants en Isère</title>
+<meta name="description" content="Le Chant de l’Hirondelle organise et prend en charge l’animation musicale de vos événements : mariage, anniversaire, fête d’entreprise, fête de village, EHPAD, bar et restaurant. Coaching vocal et scénique, depuis Pont-Évêque (Isère).">
+<meta property="og:title" content="Le Chant de l’Hirondelle · Animation musicale">
+<meta property="og:description" content="Vous choisissez l’ambiance, nous nous occupons de tout le reste.">
+<meta property="og:image" content="assets/photos/elaia-12.jpg">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/logo-hirondelle-transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"PerformingGroup","name":"Le Chant de l’Hirondelle","description":"Animation musicale pour événements privés, collectifs, bars et restaurants. Coaching vocal et scénique.","email":"lechanthirondelle@gmail.com","telephone":"+33666415981","address":{"@type":"PostalAddress","streetAddress":"47b Montée Lucien Magnat","postalCode":"38780","addressLocality":"Pont-Évêque","addressRegion":"Isère","addressCountry":"FR"},"areaServed":"Isère","member":[{"@type":"Person","name":"Marie-Ange"}]}
+</script>
+<style>
+:root{
+  --papier:#F7F5F0; --encre:#1A1C1B; --gris:#5A5F5C; --filet:rgba(26,28,27,.16);
+  --bleu:#3D717F; --bleu-fonce:#2F5A66; --nuit:#1E3A42;
+  --serif:"Newsreader", Georgia, serif; --sans:"Hanken Grotesk", system-ui, sans-serif;
+  --marge:clamp(20px,4.4vw,64px); --max:1320px;
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px; --s7:96px; --s8:144px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{background:var(--papier);color:var(--encre);font:400 18px/1.55 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+::selection{background:var(--bleu);color:#fff}
+:focus-visible{outline:2px solid var(--bleu);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:300;letter-spacing:-.015em;text-wrap:balance}
+p{text-wrap:pretty}
+em{font-style:italic}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--marge)}
+.petit{font-size:15px;line-height:1.45;color:var(--gris)}
+.legende{font:italic 300 15px/1.4 var(--serif);color:var(--gris);margin-top:10px}
+.ph{position:relative;overflow:hidden;background:#d9d6cf}
+.ph img{filter:grayscale(1) contrast(1.04)}
+.r45{aspect-ratio:4/5}.r32{aspect-ratio:3/2}.r11{aspect-ratio:1}.r34{aspect-ratio:3/4}.r219{aspect-ratio:21/9}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;background:var(--bleu);color:#fff;text-decoration:none;font:500 16px/1 var(--sans);border:0;cursor:pointer;transition:background .2s var(--ease)}
+.btn:hover{background:var(--bleu-fonce)}
+.lien{display:inline-flex;align-items:center;min-height:44px;font:500 16px/1.3 var(--sans);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;text-decoration-color:var(--filet);transition:text-decoration-color .2s}
+.lien:hover{text-decoration-color:currentColor}
+.fleche{transition:transform .2s var(--ease)}
+a:hover .fleche{transform:translateX(4px)}
+
+/* note de maquette (pour la cliente, pas pour le site final) */
+.note{display:inline-block;font:500 13px/1.3 var(--sans);color:#8a5a14;border:1px dashed #c99a52;padding:6px 10px;margin-bottom:var(--s3)}
+
+/* marquage provisoire : textes repris de la proposition de la cliente (27/10/2026), à retirer avant mise en ligne */
+.cliente,.cliente *{color:#C2410C !important}
+.contact .cliente,.contact .cliente *{color:#F5A462 !important}
+.accroche{font:italic 300 clamp(21px,1.8vw,25px)/1.3 var(--serif);margin-top:var(--s3)}
+.legende-cliente{position:fixed;left:16px;bottom:16px;z-index:30;background:var(--papier);border:1px dashed #C2410C;color:#C2410C;font:500 13px/1.3 var(--sans);padding:6px 10px}
+
+/* en-tête */
+.entete{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.96);border-bottom:1px solid var(--filet)}
+.entete .wrap{display:flex;align-items:center;gap:var(--s4);height:76px}
+.marque{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.marque img{width:44px;height:auto;filter:none}
+.marque span{font:400 18px/1.05 var(--serif);letter-spacing:-.005em}
+.nav{display:flex;gap:20px;list-style:none;white-space:nowrap}
+.nav a{font-size:15px;text-decoration:none;color:var(--gris);padding:12px 0;transition:color .2s}
+.nav a:hover{color:var(--encre)}
+.entete .btn{min-height:44px;padding:0 18px;font-size:15px;white-space:nowrap}
+.burger{display:none;min-height:44px;padding:0 4px;background:none;border:0;font:500 15px var(--sans);color:var(--encre);cursor:pointer;text-decoration:underline;text-underline-offset:6px}
+.menu-mobile{display:none}
+@media (max-width:1240px){
+  .nav,.entete .btn{display:none}
+  .burger{display:block}
+  .menu-mobile{position:fixed;inset:76px 0 0;background:var(--papier);z-index:19;padding:var(--s5) var(--marge);display:none;flex-direction:column;gap:6px}
+  .menu-mobile.ouvert{display:flex}
+  .menu-mobile a{font:300 32px/1.25 var(--serif);text-decoration:none;padding:6px 0}
+  .menu-mobile .btn{margin-top:var(--s4);align-self:flex-start;font:500 16px var(--sans)}
+}
+
+/* section 1 */
+.s1{padding:var(--s5) 0 var(--s7)}
+.portee{position:relative;height:100px;margin-bottom:var(--s5)}
+.portee .fil{position:absolute;left:0;right:0;height:1px;background:var(--encre);opacity:.55;transform-origin:left;animation:trace 1.6s var(--ease) both}
+.portee .fil:nth-child(1){top:40px}.portee .fil:nth-child(2){top:53px;animation-delay:.08s}.portee .fil:nth-child(3){top:66px;animation-delay:.16s}.portee .fil:nth-child(4){top:79px;animation-delay:.24s}.portee .fil:nth-child(5){top:92px;animation-delay:.32s}
+.portee .oiseau{position:absolute;width:46px;height:29px;color:var(--encre);animation:pose .9s var(--ease) both}
+.portee .oiseau svg{width:100%;height:100%;fill:currentColor;overflow:visible}
+.portee .vol{width:56px;height:31px}
+.portee .bleu{color:var(--bleu)}
+@keyframes trace{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pose{from{opacity:0;transform:translate(14px,-18px)}to{opacity:1;transform:none}}
+.s1 .grille{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4);align-items:start}
+.s1 .texte{grid-column:1/8;padding-bottom:var(--s5)}
+.s1 h1{font-size:clamp(42px,5vw,72px);line-height:1.03;letter-spacing:-.025em}
+.s1 h1 em{font-weight:300}
+.chapo{font:italic 300 clamp(22px,2vw,27px)/1.3 var(--serif);margin-top:var(--s3);max-width:30ch}
+.s1 .intro{margin-top:var(--s3);max-width:46ch;color:var(--gris)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2) var(--s4);margin-top:var(--s5)}
+.s1 .photos{grid-column:8/13;position:relative}
+.s1 .photos .grande{margin-left:10%}
+.s1 .photos .petite{position:absolute;left:-14%;bottom:40px;width:40%;border:10px solid var(--papier)}
+.s1 .legende{margin-left:10%;text-align:right}
+
+/* bandeau */
+.bandeau{border-top:1px solid var(--filet);border-bottom:1px solid var(--filet)}
+.bandeau ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr)}
+.bandeau li{display:flex;align-items:center;gap:var(--s3);padding:var(--s3) var(--s4) var(--s3) 0}
+.bandeau li+li{border-left:1px solid var(--filet);padding-left:var(--s4)}
+.bandeau .ph{width:72px;height:72px;flex:none}
+.bandeau strong{font:400 22px/1.2 var(--serif)}
+
+/* sections communes */
+.sec{padding:var(--s8) 0 0}
+.tete{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4);margin-bottom:var(--s6)}
+.tete h2{grid-column:1/8;font-size:clamp(34px,3.8vw,56px);line-height:1.06}
+.tete p{grid-column:1/7;color:var(--gris);margin-top:calc(var(--s3) * -1)}
+h3{font-size:26px;line-height:1.2;font-weight:400}
+
+/* section 2 */
+.choix{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4)}
+.choix a{text-decoration:none;display:block}
+.choix .ph img{transition:transform .6s var(--ease)}
+.choix a:hover .ph img{transform:scale(1.035)}
+.choix h3{margin-top:var(--s3);font-size:25px}
+.choix a:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.choix p{margin-top:6px;font-size:16px;color:var(--gris)}
+
+/* section 3 */
+.s3-haut{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4);align-items:start}
+.s3-haut .gauche{grid-column:1/7}
+.s3-haut .gauche h2{font-size:clamp(34px,3.8vw,56px);line-height:1.06}
+.s3-haut .gauche>p{margin-top:var(--s3);color:var(--gris);max-width:48ch}
+.publics{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);margin-top:var(--s5)}
+.publics .ph{margin-bottom:var(--s2)}
+.publics h3{font-size:22px}
+.publics ul{list-style:none;margin-top:var(--s1)}
+.publics li{padding:8px 0;border-bottom:1px solid var(--filet);font-size:17px}
+.s3-haut .droite{grid-column:8/13}
+.arguments{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4);margin-top:var(--s7);border-top:1px solid var(--encre);padding-top:var(--s3)}
+.arguments h3{font-size:23px}
+.arguments p{margin-top:var(--s1);font-size:16px;color:var(--gris);max-width:34ch}
+.sous-titre{font:300 clamp(28px,2.6vw,36px)/1.15 var(--serif);margin:var(--s7) 0 var(--s4)}
+.bas-section{margin-top:var(--s5)}
+
+/* style 1 : accordéon */
+.acc{border-top:1px solid var(--encre)}
+.acc details{border-bottom:1px solid var(--filet)}
+.acc summary{list-style:none;display:grid;grid-template-columns:64px 1fr auto 32px;align-items:center;gap:var(--s3);padding:14px 0;cursor:pointer;min-height:92px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .ph{width:64px;height:64px}
+.acc .nom{font:400 clamp(24px,2.2vw,30px)/1.1 var(--serif)}
+.acc .genre{font:italic 300 18px/1.2 var(--serif);color:var(--gris)}
+.acc .plus{position:relative;width:20px;height:20px;justify-self:end}
+.acc .plus::before,.acc .plus::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--encre);transition:transform .3s var(--ease)}
+.acc .plus::after{transform:rotate(90deg)}
+.acc details[open] .plus::after{transform:rotate(0)}
+.acc summary:hover .nom{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.acc .corps{display:grid;grid-template-columns:64px 280px 1fr;gap:var(--s3);padding:0 0 var(--s4)}
+.acc .corps .ph{grid-column:2}
+.acc .corps div:last-child{max-width:52ch}
+.acc .corps p+p,.acc .corps p+a{margin-top:var(--s2)}
+
+/* section 4 */
+.s4-haut{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4);align-items:end}
+.s4-haut .ph{grid-column:1/8}
+.s4-haut .texte{grid-column:8/13}
+.s4-haut h2{font-size:clamp(34px,3.6vw,52px);line-height:1.06}
+.s4-haut .texte>p{margin-top:var(--s3);color:var(--gris)}
+.ehpad{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4);margin-top:var(--s6);align-items:center}
+.ehpad .ph{grid-column:1/4}
+.ehpad div:last-child{grid-column:4/10;border-left:1px solid var(--encre);padding-left:var(--s4)}
+.ehpad h3{font-size:30px}
+.ehpad p{margin-top:var(--s1);color:var(--gris)}
+/* style 2 : carrousel */
+.car-tete{display:flex;align-items:end;justify-content:space-between;gap:var(--s3);margin:var(--s7) 0 var(--s4)}
+.car-tete .sous-titre{margin:0}
+.fleches{display:flex;gap:8px}
+.fleches button{width:48px;height:48px;border:1px solid var(--encre);background:none;font:400 20px var(--sans);cursor:pointer;color:var(--encre);transition:background .2s,color .2s}
+.fleches button:hover{background:var(--encre);color:var(--papier)}
+.car{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(260px,26vw,340px);gap:var(--s4);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--s3);scrollbar-width:thin;scrollbar-color:var(--encre) transparent}
+.car article{scroll-snap-align:start}
+.car h3{margin-top:var(--s2);font-size:26px}
+.car .genre{font:italic 300 17px var(--serif);color:var(--gris)}
+.car p{margin-top:var(--s1);font-size:16px;color:var(--gris)}
+.car .lien{font-size:15px}
+
+/* section 5 */
+.s5-photo{margin-bottom:var(--s5)}
+.s5-tete{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4)}
+.s5-tete h2{grid-column:1/7;font-size:clamp(34px,3.8vw,56px);line-height:1.06}
+.s5-tete .s5-txt{grid-column:8/13;color:var(--gris);align-self:end}
+.s5-tete .s5-txt p+p{margin-top:var(--s2)}
+.s5-tete .accroche{margin-top:0;color:var(--encre)}
+/* style 3 : onglets */
+.ong{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4);align-items:start}
+.ong [role=tablist]{grid-column:1/5;display:flex;flex-direction:column;border-top:1px solid var(--encre)}
+.ong [role=tab]{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2);text-align:left;background:none;border:0;border-bottom:1px solid var(--filet);padding:16px 0;min-height:64px;cursor:pointer;color:var(--gris);font:400 26px/1.1 var(--serif);transition:color .2s,padding .3s var(--ease)}
+.ong [role=tab] small{font:italic 300 16px var(--serif)}
+.ong [role=tab]:hover{color:var(--encre)}
+.ong [role=tab][aria-selected=true]{color:var(--encre);padding-left:20px;box-shadow:inset 2px 0 0 var(--bleu)}
+.ong .panneaux{grid-column:6/13}
+.ong [role=tabpanel]{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--s4);align-items:end}
+.ong [role=tabpanel] h3{font-size:32px}
+.ong [role=tabpanel] p{margin-top:var(--s2);color:var(--gris)}
+.ong [role=tabpanel] .lien{margin-top:var(--s2)}
+.js .ong [role=tabpanel][hidden]{display:none}
+.no-js .ong [role=tablist]{display:none}
+.no-js .ong .panneaux{grid-column:1/13;display:grid;gap:var(--s5)}
+
+/* section 6 */
+.s6-haut{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4);align-items:end}
+.s6-haut .texte{grid-column:1/6}
+.s6-haut h2{font-size:clamp(34px,3.8vw,56px);line-height:1.06}
+.s6-haut .texte>p{margin-top:var(--s3);color:var(--gris)}
+.s6-haut .duo{grid-column:7/13;display:grid;grid-template-columns:1fr 1.6fr;gap:var(--s3);align-items:end}
+.detail{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4);align-items:center;padding:var(--s4) 0;border-bottom:1px solid var(--filet)}
+.detail:first-of-type{border-top:1px solid var(--encre)}
+.detail .ph{grid-column:1/4;aspect-ratio:1}
+.detail .txt{grid-column:5/12}
+.detail h3{font-size:clamp(28px,2.6vw,38px);line-height:1.1}
+.detail h3 span{font-style:italic;color:var(--gris)}
+.detail h3 span.droit{font-style:normal}
+.detail p{margin-top:var(--s2);max-width:52ch;color:var(--gris)}
+.detail .lien{margin-top:var(--s2)}
+.coaching{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4);margin-top:var(--s8);align-items:start}
+.coaching .photos{grid-column:1/6;display:grid;grid-template-columns:1.4fr 1fr;gap:var(--s3);align-items:start}
+.coaching .photos .ph:last-child{margin-top:var(--s7)}
+.coaching .texte{grid-column:7/13}
+.coaching h2{font-size:clamp(34px,3.6vw,52px);line-height:1.06}
+.coaching .texte>p{margin-top:var(--s3);color:var(--gris)}
+.coaching ul{list-style:none;margin-top:var(--s4);border-top:1px solid var(--encre)}
+.coaching li{padding:var(--s2) 0;border-bottom:1px solid var(--filet)}
+.coaching li strong{display:block;font:400 24px/1.2 var(--serif)}
+.coaching li span{font-size:16px;color:var(--gris)}
+
+/* section 7 */
+.actus{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+.actus time{display:block;margin-top:var(--s2);font-size:15px;color:var(--gris);font-variant-numeric:tabular-nums}
+.actus h3{font-size:24px;margin-top:4px}
+.actus p{margin-top:6px;font-size:16px;color:var(--gris)}
+
+/* section 8 */
+.contact{color-scheme:dark;margin-top:var(--s8);background:var(--nuit);color:#F2F1EC;padding:var(--s8) 0}
+.contact .grille{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4)}
+.contact .gauche{grid-column:1/6}
+.contact h2{font-size:clamp(36px,4vw,60px);line-height:1.04}
+.contact .gauche>p{margin-top:var(--s3);color:rgba(242,241,236,.78);max-width:40ch}
+.contact .ph{margin-top:var(--s5);width:70%}
+.contact .ph img{filter:grayscale(1) contrast(1.05) brightness(.95)}
+.coord{margin-top:var(--s4);font-size:17px;line-height:1.8}
+.coord a{text-decoration:none;border-bottom:1px solid rgba(242,241,236,.35)}
+form{grid-column:7/13}
+fieldset{border:0}
+legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,236,.78);margin-bottom:10px}
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:4px var(--s3);margin-bottom:var(--s4)}
+.cases label{display:flex;align-items:center;gap:12px;min-height:44px;font-size:17px;cursor:pointer}
+.cases input{appearance:none;width:18px;height:18px;border:1px solid #F2F1EC;display:grid;place-content:center;flex:none;cursor:pointer}
+.cases input::before{content:"";width:8px;height:8px;background:#F2F1EC;transform:scale(0);transition:transform .15s}
+.cases input:checked::before{transform:scale(1)}
+.champ{margin-bottom:var(--s4)}
+.champ small{display:block;font-size:14px;color:rgba(242,241,236,.6);margin:-6px 0 8px}
+.champ input,.champ textarea,.champ select{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(242,241,236,.45);color:#F2F1EC;font:400 18px var(--sans);padding:10px 0;min-height:48px;border-radius:0;transition:border-color .2s}
+.champ select option{color:var(--encre)}
+.champ textarea{min-height:110px;resize:vertical}
+.champ input:focus,.champ textarea:focus,.champ select:focus{outline:none;border-bottom-color:#fff}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:0 var(--s4)}
+.contact .btn{background:#F2F1EC;color:var(--nuit)}
+.contact .btn:hover{background:#fff}
+
+/* pied */
+.pied{padding:var(--s6) 0 var(--s5)}
+.pied .grille{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4)}
+.pied .nom{grid-column:1/5;font:400 26px/1.15 var(--serif)}
+.pied .nom small{display:block;font:400 16px var(--sans);color:var(--gris);margin-top:8px}
+.pied div{grid-column:span 3;font-size:16px;line-height:1.9}
+.pied div:last-child{grid-column:span 2}
+.pied h4{font:500 15px var(--sans);color:var(--gris);margin-bottom:6px}
+.pied a{text-decoration:none}
+.pied a:hover{text-decoration:underline}
+.mentions{margin-top:var(--s6);padding-top:var(--s3);border-top:1px solid var(--filet);display:flex;justify-content:space-between;font-size:14px;color:var(--gris)}
+
+/* responsive */
+@media (max-width:1000px){
+  .choix{grid-template-columns:1fr 1fr}
+  .s1 .texte,.s1 .photos,.s3-haut .gauche,.s3-haut .droite,.s4-haut .ph,.s4-haut .texte,.s6-haut .texte,.s6-haut .duo,.coaching .photos,.coaching .texte,.contact .gauche,form,.tete h2,.tete p,.s5-tete h2,.s5-tete .s5-txt,.ong [role=tablist],.ong .panneaux{grid-column:1/-1}
+  .s1 .photos{margin-top:var(--s3)}
+  .s1 .photos .petite{bottom:-32px}
+  .s3-haut .droite{order:-1}
+  .ehpad .ph{grid-column:1/5}.ehpad div:last-child{grid-column:5/13}
+  .detail .ph{grid-column:1/5}
+  .detail .txt{grid-column:6/13}
+  .contact .gauche{margin-bottom:var(--s6)}
+  .pied .nom{grid-column:1/-1}.pied div,.pied div:last-child{grid-column:span 4}
+}
+@media (max-width:700px){
+  body{font-size:17px}
+  .portee{height:84px;margin-bottom:var(--s5)}
+  .portee .loin{display:none}
+  .s1{padding-top:var(--s4)}
+  .s1 .texte{padding-bottom:0}
+  .s1 .photos .grande{margin-left:0}
+  .s1 .photos .petite{display:none}
+  .s1 .legende{margin-left:0}
+  .bandeau ul{grid-template-columns:1fr}
+  .bandeau li,.bandeau li+li{border-left:0;padding:var(--s2) 0}
+  .bandeau li+li{border-top:1px solid var(--filet)}
+  .bandeau .ph{width:56px;height:56px}
+  .sec{padding-top:var(--s7)}
+  .choix{gap:var(--s4) var(--s3)}
+  .choix h3{font-size:21px}
+  .publics,.arguments{grid-template-columns:1fr}
+  .arguments{gap:var(--s3)}
+  .acc summary{grid-template-columns:56px 1fr 24px;gap:var(--s2)}
+  .acc summary .ph{width:56px;height:56px}
+  .acc .genre{grid-column:2;grid-row:2;font-size:16px;margin-top:-14px}
+  .acc .plus{grid-column:3;grid-row:1/3}
+  .acc .corps{grid-template-columns:1fr}
+  .acc .corps .ph{grid-column:1}
+  .ehpad .ph,.ehpad div:last-child{grid-column:1/-1}
+  .ehpad div:last-child{border-left:0;padding-left:0;border-top:1px solid var(--encre);padding-top:var(--s3)}
+  .car-tete{flex-direction:column;align-items:flex-start}
+  .car{grid-auto-columns:78%}
+  .ong [role=tabpanel]{grid-template-columns:1fr}
+  .detail .ph,.detail .txt{grid-column:1/-1}
+  .detail .ph{aspect-ratio:3/2}
+  .coaching .photos .ph:last-child{margin-top:var(--s5)}
+  .actus{grid-template-columns:1fr}
+  .cases,.deux{grid-template-columns:1fr}
+  .contact .ph{width:100%}
+  .pied div,.pied div:last-child{grid-column:1/-1}
+  .mentions{flex-direction:column;gap:6px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.replace('no-js','js')</script>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- hirondelle posée, de profil, regard à gauche -->
+    <symbol id="pose" viewBox="0 0 64 40">
+      <path d="M3 14.6 L8.4 13 C9.6 9.2 12.8 7 16.6 7.2 C20.4 7.4 23.2 9.6 26 12.4 C32 18 41.5 22.6 53.5 27.4 L63 31.6 L51.8 30 L60.5 35.6 L46.5 31.8 C40 31 33 30.6 26.5 29.6 C19 28.4 13.4 24.6 10.8 19.4 C9.6 17 7.2 15.4 3 14.6 Z"/>
+      <path d="M21 29.4 L20 36 M25 30 L24.6 36" stroke="currentColor" stroke-width="1.1" fill="none"/>
+    </symbol>
+    <!-- hirondelle en vol -->
+    <symbol id="vol" viewBox="0 0 72 40">
+      <path d="M1 22 C10 17 19 17 27 20.5 C31 13 39 5.5 52 1 C44.5 8.5 39.5 15 36.4 21.6 C39 22.4 41 24 42 26 L56 27.6 L44.6 30 L62 37.6 L41.6 32.4 C37 33.4 32 32.6 28 29.6 C20 27 11 24.4 1 22 Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="entete">
+  <div class="wrap">
+    <a class="marque" href="#haut" aria-label="Le Chant de l’Hirondelle, accueil">
+      <img src="assets/logo-hirondelle-transparent.png" alt="" width="93" height="59">
+      <span>Le Chant de<br>l’Hirondelle</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <ul class="nav">
+        <li><a href="#prive">Événements privés</a></li>
+        <li><a href="#collectif">Mairies &amp; EHPAD</a></li>
+        <li><a href="#bars">Bars &amp; restaurants</a></li>
+        <li><a href="#coaching">Coaching vocal</a></li>
+        <li><a href="#qui">Qui sommes-nous</a></li>
+        <li><a href="#actualites">Actualités</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#contact">Demander une animation</a>
+    <button class="burger" aria-expanded="false" aria-controls="menu-mobile">Menu</button>
+  </div>
+</header>
+<div class="menu-mobile" id="menu-mobile">
+  <a href="#prive">Événements privés</a>
+  <a href="#collectif">Mairies &amp; EHPAD</a>
+  <a href="#bars">Bars &amp; restaurants</a>
+  <a href="#coaching">Coaching vocal</a>
+  <a href="#qui">Qui sommes-nous</a>
+  <a href="#actualites">Actualités</a>
+  <a class="btn" href="#contact">Demander une animation</a>
+</div>
+
+<main id="haut">
+
+<!-- SECTION 1 -->
+<section class="s1" aria-labelledby="titre-s1">
+  <div class="wrap">
+    <div class="portee" aria-hidden="true">
+      <span class="fil"></span><span class="fil"></span><span class="fil"></span><span class="fil"></span><span class="fil"></span>
+      <!-- chaque oiseau posé : bas du dessin sur un fil (top = fil − 22 px) -->
+      <span class="oiseau" style="left:6%;top:66px;animation-delay:.9s"><svg><use href="#pose"/></svg></span>
+      <span class="oiseau" style="left:14%;top:53px;animation-delay:1.05s"><svg><use href="#pose"/></svg></span>
+      <span class="oiseau" style="left:22%;top:40px;animation-delay:1.2s"><svg><use href="#pose"/></svg></span>
+      <span class="oiseau loin" style="left:33%;top:53px;animation-delay:1.35s"><svg><use href="#pose"/></svg></span>
+      <span class="oiseau" style="left:41%;top:27px;animation-delay:1.5s"><svg><use href="#pose"/></svg></span>
+      <span class="oiseau loin" style="left:52%;top:40px;animation-delay:1.65s"><svg><use href="#pose"/></svg></span>
+      <span class="oiseau" style="left:61%;top:66px;animation-delay:1.8s"><svg><use href="#pose"/></svg></span>
+      <span class="oiseau loin" style="left:70%;top:53px;animation-delay:1.95s"><svg><use href="#pose"/></svg></span>
+      <span class="oiseau bleu" style="left:80%;top:27px;animation-delay:2.1s"><svg><use href="#pose"/></svg></span>
+      <span class="oiseau vol" style="left:91%;top:-6px;animation-delay:2.3s"><svg><use href="#vol"/></svg></span>
+    </div>
+
+    <div class="grille">
+      <div class="texte">
+        <h1 id="titre-s1">Animation musicale pour <em>tous</em> vos événements</h1>
+        <p class="chapo">Vous choisissez l’ambiance, nous nous occupons de tout le reste.</p>
+        <p class="intro cliente">Mariage, événement professionnel, fête privée, manifestation locale ou projet artistique&#8239;: nous imaginons des propositions musicales adaptées à votre événement, à votre public et à l’ambiance que vous souhaitez créer.</p>
+        <div class="actions">
+          <a class="btn" href="#choix">L’événement qui vous convient <span class="fleche" aria-hidden="true">→</span></a>
+          <a class="lien" href="#contact">Contactez-nous pour votre événement</a>
+        </div>
+      </div>
+      <div class="photos">
+        <div class="ph r45 grande"><img src="assets/photos/elaia-12.jpg" alt="Elaïa chante sur scène, micro à la main" width="1600" height="1600"></div>
+        <div class="ph r11 petite"><img src="assets/photos/elaia-36.jpg" alt="Elaïa sourit en chantant" width="1600" height="1600"></div>
+        <p class="legende">Elaïa en concert · photos provisoires</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANDEAU POINTS FORTS -->
+<div class="bandeau">
+  <div class="wrap">
+    <ul>
+      <li><div class="ph"><img src="assets/photos/elaia-43.jpg" alt="" loading="lazy"></div><strong>Festive ou intimiste</strong></li>
+      <li><div class="ph"><img src="assets/photos/generiques/partition-page.jpg" alt="" loading="lazy"></div><strong>Aide au choix du répertoire</strong></li>
+      <li><div class="ph"><img src="assets/photos/generiques/groupe-scene-2.jpg" alt="" loading="lazy"></div><strong>Régie son et lumière assurée</strong></li>
+    </ul>
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<section class="sec" id="choix" aria-labelledby="titre-s2">
+  <div class="wrap">
+    <div class="tete"><h2 id="titre-s2">Vous êtes à la recherche d’une animation musicale pour&#8239;:</h2></div>
+    <div class="choix">
+      <a href="#prive">
+        <div class="ph r34"><img src="assets/photos/generiques/mariage-danse.jpg" alt="" loading="lazy"></div>
+        <h3>Un événement privé ou professionnel <span class="fleche" aria-hidden="true">→</span></h3>
+        <p>mariage, anniversaire, fête de famille ou d’entreprise</p>
+      </a>
+      <a href="#collectif">
+        <div class="ph r34"><img src="assets/photos/generiques/rue-en-fete.jpg" alt="" loading="lazy"></div>
+        <h3>Un événement collectif <span class="fleche" aria-hidden="true">→</span></h3>
+        <p>mairie, fête de village, établissement public, EHPAD</p>
+      </a>
+      <a href="#bars">
+        <div class="ph r34"><img src="assets/photos/generiques/terrasse-soir.jpg" alt="" loading="lazy"></div>
+        <h3>Un bar ou un restaurant <span class="fleche" aria-hidden="true">→</span></h3>
+        <p>ambiance lounge ou festive</p>
+      </a>
+      <a href="#coaching">
+        <div class="ph r34"><img src="assets/photos/generiques/micro.jpg" alt="" loading="lazy"></div>
+        <h3>Un coaching vocal <span class="fleche" aria-hidden="true">→</span></h3>
+        <p>poser votre voix, gagner en aisance sur scène</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 : ÉVÉNEMENT PRIVÉ (présentation 1 : accordéon) -->
+<section class="sec" id="prive" aria-labelledby="titre-s3">
+  <div class="wrap">
+    <div class="s3-haut">
+      <div class="gauche">
+        <h2 id="titre-s3">Animation musicale pour vos événements privés ou professionnels</h2>
+        <p class="accroche cliente">Votre événement mérite une musique qui lui ressemble.</p>
+        <p class="cliente">Mariage, anniversaire, fête de famille, célébration, événement pour vos collaborateurs ou réception imaginée pour vos clients&#8239;: Le Chant de l’Hirondelle crée des propositions musicales adaptées à votre événement, à votre lieu et aux personnes qui le vivront.</p>
+        <p class="cliente">Que vous organisiez vous-même votre événement ou que vous accompagniez vos clients dans sa conception, nous vous aidons à imaginer une ambiance musicale en accord avec le moment que vous souhaitez créer.</p>
+        <p class="cliente">De l’élégance d’un piano-voix pour accompagner un cocktail ou un dîner, à une ambiance plus chaleureuse et festive pour faire vivre votre soirée, chaque prestation trouve sa juste place dans l’événement.</p>
+        <div class="publics">
+          <div>
+            <div class="ph r32"><img src="assets/photos/elaia-19.jpg" alt="" loading="lazy"></div>
+            <h3>Pour les particuliers</h3>
+            <ul><li>Mariage</li><li>Anniversaire</li><li>Fête de famille</li></ul>
+          </div>
+          <div>
+            <div class="ph r32"><img src="assets/photos/generiques/soiree-entreprise.jpg" alt="" loading="lazy"></div>
+            <h3>Pour les entreprises</h3>
+            <ul><li>Fête de fin d’année</li><li>Fête de rentrée</li><li>Anniversaire d’entreprise</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="droite">
+        <div class="ph r45"><img src="assets/photos/generiques/mariage-danse.jpg" alt="Un couple danse pendant une soirée de mariage" loading="lazy"></div>
+        <p class="legende">Photo générique provisoire</p>
+      </div>
+    </div>
+
+    <h3 class="sous-titre">Nos formations pour votre événement</h3>
+    <span class="note">Présentation 1 sur 3 · accordéon (à choisir avec la cliente)</span>
+    <div class="acc">
+      <details open>
+        <summary><div class="ph"><img src="assets/photos/elaia-9.jpg" alt="" loading="lazy"></div><span class="nom">Elaïa</span><span class="genre">Festive et jazzy</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="corps"><span></span><div class="ph r32"><img src="assets/photos/elaia-9.jpg" alt="Elaïa chante en souriant" loading="lazy"></div>
+          <div><p class="cliente">Une animation musicale élégante et chaleureuse, portée par une présence vocale singulière, entre émotion, proximité et énergie.</p><a class="lien" href="#d-elaia">Découvrir Elaïa <span class="fleche" aria-hidden="true">→</span></a></div></div>
+      </details>
+      <details>
+        <summary><div class="ph"><img src="assets/photos/generiques/piano-voix.jpg" alt="" loading="lazy"></div><span class="nom">ElaëL</span><span class="genre">Duo piano-voix</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="corps"><span></span><div class="ph r32"><img src="assets/photos/generiques/piano-voix.jpg" alt="Une chanteuse au piano" loading="lazy"></div>
+          <div><p class="cliente">Un duo piano-voix élégant et complice pour faire swinguer vos cocktails, mariages et événements d’entreprise.</p><a class="lien" href="#d-elael">Découvrir ElaëL <span class="fleche" aria-hidden="true">→</span></a></div></div>
+      </details>
+      <details>
+        <summary><div class="ph"><img src="assets/photos/generiques/duo-guitare-voix.jpg" alt="" loading="lazy"></div><span class="nom">RaphaElaïa</span><span class="genre">Festive et populaire</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="corps"><span></span><div class="ph r32"><img src="assets/photos/generiques/duo-guitare-voix.jpg" alt="Un duo guitare et voix" loading="lazy"></div>
+          <div><p class="cliente">Une animation musicale festive et conviviale, portée par deux voix complices et une guitare, autour de chansons populaires et de reprises entraînantes, pour faire chanter et vibrer votre public.</p><a class="lien" href="#d-rapha">Découvrir RaphaElaïa <span class="fleche" aria-hidden="true">→</span></a></div></div>
+      </details>
+      <details>
+        <summary><div class="ph"><img src="assets/photos/generiques/duo-scene.jpg" alt="" loading="lazy"></div><span class="nom">Les Z’artistes</span><span class="genre">Cabaret</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="corps"><span></span><div class="ph r32"><img src="assets/photos/generiques/duo-scene.jpg" alt="Des chanteurs sur scène" loading="lazy"></div>
+          <div><p class="cliente">5 chanteurs, des danseuses cabaret et 3 spectacles thématiques pour enflammer vos événements en totale autonomie.</p><a class="lien" href="#d-zartistes">Découvrir Les Z’artistes <span class="fleche" aria-hidden="true">→</span></a></div></div>
+      </details>
+      <details>
+        <summary><div class="ph"><img src="assets/photos/generiques/groupe-scene.jpg" alt="" loading="lazy"></div><span class="nom">PrismaGiga</span><span class="genre">Pop-rock et soul</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="corps"><span></span><div class="ph r32"><img src="assets/photos/generiques/groupe-scene.jpg" alt="Un groupe pop-rock sur scène" loading="lazy"></div>
+          <div><p class="cliente">Un groupe de 6 musiciens et deux voix féminines explosives pour un show pop-rock et soul 100&#8239;% live.</p><a class="lien" href="#d-prismagiga">Découvrir PrismaGiga <span class="fleche" aria-hidden="true">→</span></a></div></div>
+      </details>
+    </div>
+    <div class="bas-section"><a class="btn" href="#contact">Demander une animation <span class="fleche" aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- SECTION 4 : COLLECTIF (présentation 2 : carrousel) -->
+<section class="sec" id="collectif" aria-labelledby="titre-s4">
+  <div class="wrap">
+    <div class="s4-haut">
+      <div class="ph r32"><img src="assets/photos/generiques/rue-en-fete.jpg" alt="Une rue de village en fête, le soir" loading="lazy"></div>
+      <div class="texte">
+        <h2 id="titre-s4">Animation musicale pour les mairies, fêtes de village et EHPAD</h2>
+        <p class="accroche cliente">Vous souhaitez créer un moment qui rassemble et qui ressemble à votre public&#8239;?</p>
+        <p class="cliente">Fête communale, manifestation locale, repas des aînés, animation, événement associatif ou moment de convivialité&#8239;: Le Chant de l’Hirondelle imagine des propositions musicales et artistiques en accord avec votre projet, votre lieu et votre public.</p>
+        <p class="cliente">Commune, comité des fêtes, CCAS, établissement accueillant des seniors ou des publics spécifiques, association&#8239;: chaque structure porte des projets différents, mais avec une même envie, proposer un moment vivant, chaleureux et adapté à celles et ceux qui vont le partager.</p>
+      </div>
+    </div>
+
+    <div class="ehpad">
+      <div class="ph r11"><img src="assets/photos/elaia-11.jpg" alt="Elaïa se retourne en souriant" loading="lazy"></div>
+      <div>
+        <h3>En EHPAD&#8239;: Elaïa, en solo</h3>
+        <p>Pour les résidents, Elaïa chante seule, en variété française et internationale. <span class="cliente">Parce qu’une animation destinée à faire danser un village n’a pas les mêmes besoins qu’un spectacle proposé à des seniors, nous adaptons notre approche au projet et à celles et ceux qui vont le vivre.</span></p>
+      </div>
+    </div>
+
+    <div class="car-tete">
+      <h3 class="sous-titre">Nos formations pour les communes</h3>
+      <div class="fleches"><button type="button" data-car="-1" aria-label="Formation précédente">←</button><button type="button" data-car="1" aria-label="Formation suivante">→</button></div>
+    </div>
+    <span class="note">Présentation 2 sur 3 · carrousel</span>
+    <div class="car" tabindex="0" aria-label="Formations pour les communes">
+      <article><div class="ph r45"><img src="assets/photos/elaia-41.jpg" alt="Elaïa sur scène" loading="lazy"></div><h3>Elaïa</h3><span class="genre">Chanteuse solo</span><p>Pour un repas des anciens, une fête des voisins ou un après-midi en EHPAD. <span class="cliente">Entre concert et animations interactives&#8239;: blind test, jeux autour de la chanson française ou Juke-box Live.</span></p><a class="lien" href="#d-elaia">Découvrir Elaïa →</a></article>
+      <article><div class="ph r45"><img src="assets/photos/generiques/piano-2.jpg" alt="Un pianiste chante" loading="lazy"></div><h3>ElaëL</h3><span class="genre">Duo piano-voix</span><p class="cliente">Le raffinement du jazz et la chaleur des rythmes latinos au cœur d’un duo piano-voix unique pour sublimer vos plus beaux événements.</p><a class="lien" href="#d-elael">Découvrir ElaëL →</a></article>
+      <article><div class="ph r45"><img src="assets/photos/generiques/duo-guitare-voix.jpg" alt="Duo guitare et voix" loading="lazy"></div><h3>RaphaElaïa</h3><span class="genre">Duo guitare-voix</span><p>Pour un marché d’été ou un bal de village, des rythmes populaires que tout le monde reprend. <span class="cliente">En concert comme en animation musicale, le duo donne envie au public de chanter avec lui.</span></p><a class="lien" href="#d-rapha">Découvrir RaphaElaïa →</a></article>
+      <article><div class="ph r45"><img src="assets/photos/generiques/duo-scene.jpg" alt="Chanteurs sur scène" loading="lazy"></div><h3>Les Z’artistes</h3><span class="genre">5 chanteurs et chanteuses</span><p class="cliente">Toute la magie du spectacle vivant et des grands standards de la chanson réunis dans un show clé en main.</p><a class="lien" href="#d-zartistes">Découvrir Les Z’artistes →</a></article>
+      <article><div class="ph r45"><img src="assets/photos/generiques/groupe-scene-2.jpg" alt="Groupe sur scène" loading="lazy"></div><h3>PrismaGiga</h3><span class="genre">Groupe pop-rock et soul</span><p class="cliente">L’électricité du rock et le groove de la soul réunis dans un spectacle live puissant porté par un duo vocal féminin.</p><a class="lien" href="#d-prismagiga">Découvrir PrismaGiga →</a></article>
+    </div>
+    <div class="bas-section"><a class="btn" href="#contact">Demander une animation <span class="fleche" aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- SECTION 5 : BARS ET RESTAURANTS (présentation 3 : onglets) -->
+<section class="sec" id="bars" aria-labelledby="titre-s5">
+  <div class="wrap">
+    <div class="ph r219 s5-photo"><img src="assets/photos/generiques/terrasse-soir.jpg" alt="Terrasses de restaurants animées, un soir d’été" loading="lazy"></div>
+    <div class="s5-tete">
+      <h2 id="titre-s5">Animation musicale pour bars, restaurants, hôtels et campings</h2>
+      <div class="s5-txt">
+        <p class="accroche cliente">Et si la musique devenait une véritable partie de l’expérience que vous proposez à vos clients&#8239;?</p>
+        <p class="cliente">Dîner en musique, soirée festive, animation estivale, rendez-vous régulier ou moment particulier&#8239;: Le Chant de l’Hirondelle imagine des propositions adaptées à votre établissement, à votre clientèle et à l’ambiance que vous souhaitez faire vivre.</p>
+        <p class="cliente">Parce qu’une bonne animation doit s’intégrer naturellement à la vie d’un établissement, nous accordons une attention particulière au format, au volume, au répertoire et à l’énergie proposés&#8239;: le juste équilibre entre présence artistique et confort de vos clients.</p>
+      </div>
+    </div>
+
+    <h3 class="sous-titre">Nos formations pour votre établissement</h3>
+    <span class="note">Présentation 3 sur 3 · onglets</span>
+    <div class="ong">
+      <div role="tablist" aria-label="Formations pour bars et restaurants">
+        <button role="tab" id="t-piano" aria-controls="p-piano" aria-selected="true">ElaëL <small>duo piano-voix</small></button>
+        <button role="tab" id="t-elaia" aria-controls="p-elaia" aria-selected="false" tabindex="-1">Elaïa <small>festive et jazzy</small></button>
+        <button role="tab" id="t-rapha" aria-controls="p-rapha" aria-selected="false" tabindex="-1">RaphaElaïa <small>festive et populaire</small></button>
+        <button role="tab" id="t-zart" aria-controls="p-zart" aria-selected="false" tabindex="-1">Les Z’artistes <small>cabaret</small></button>
+        <button role="tab" id="t-inter" aria-controls="p-inter" aria-selected="false" tabindex="-1">PrismaGiga <small>pop-rock et soul</small></button>
+      </div>
+      <div class="panneaux">
+        <div role="tabpanel" id="p-piano" aria-labelledby="t-piano"><div class="ph r45"><img src="assets/photos/generiques/piano-voix.jpg" alt="Chanteuse au piano" loading="lazy"></div><div><h3>ElaëL</h3><p>Pour un dîner ou un apéritif, un fond musical élégant qui laisse parler vos clients&#8239;: jazz latino et variété française. <span class="cliente">Des mélodies feutrées du jazz aux rythmes chaleureux de la bossa nova.</span></p><a class="lien" href="#d-elael">Découvrir ElaëL →</a></div></div>
+        <div role="tabpanel" id="p-elaia" aria-labelledby="t-elaia" hidden><div class="ph r45"><img src="assets/photos/elaia-31.jpg" alt="Elaïa chante, bras tendu" loading="lazy"></div><div><h3>Elaïa</h3><p>Une voix et une bande-son, une installation légère qui tient dans un coin de salle. <span class="cliente">Blind test, jeux autour de la chanson française ou Juke-box Live&#8239;: autant de façons de créer une ambiance conviviale.</span></p><a class="lien" href="#d-elaia">Découvrir Elaïa →</a></div></div>
+        <div role="tabpanel" id="p-rapha" aria-labelledby="t-rapha" hidden><div class="ph r45"><img src="assets/photos/generiques/duo-guitare-voix.jpg" alt="Duo guitare et voix" loading="lazy"></div><div><h3>RaphaElaïa</h3><p>Guitare et deux voix pour une soirée festive en terrasse. <span class="cliente">Des chansons populaires et des reprises entraînantes, pour faire chanter et vibrer vos clients.</span></p><a class="lien" href="#d-rapha">Découvrir RaphaElaïa →</a></div></div>
+        <div role="tabpanel" id="p-zart" aria-labelledby="t-zart" hidden><div class="ph r45"><img src="assets/photos/generiques/duo-scene.jpg" alt="Chanteurs sur scène" loading="lazy"></div><div><h3>Les Z’artistes</h3><p>Une soirée cabaret pour les grandes salles. <span class="cliente">Trois spectacles au choix&#8239;: <em>De fil en aiguille</em>, <em>Flashback</em> (100&#8239;% années 80) ou <em>Plumes et Strass</em>.</span></p><a class="lien" href="#d-zartistes">Découvrir Les Z’artistes →</a></div></div>
+        <div role="tabpanel" id="p-inter" aria-labelledby="t-inter" hidden><div class="ph r45"><img src="assets/photos/generiques/groupe-scene.jpg" alt="Groupe sur scène" loading="lazy"></div><div><h3>PrismaGiga</h3><p>Pop, rock et soul pour les bars qui ont une scène. <span class="cliente">Six musiciens et deux voix féminines pour un show 100&#8239;% live.</span></p><a class="lien" href="#d-prismagiga">Découvrir PrismaGiga →</a></div></div>
+      </div>
+    </div>
+    <div class="bas-section"><a class="btn" href="#contact">Demander une animation <span class="fleche" aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- SECTION 6 : QUI SOMMES-NOUS -->
+<section class="sec" id="qui" aria-labelledby="titre-s6">
+  <div class="wrap">
+    <div class="s6-haut">
+      <div class="texte">
+        <h2 id="titre-s6">Le Chant de l’Hirondelle&#8239;: vous ne vous occupez de rien</h2>
+        <p class="cliente">Le Chant de l’Hirondelle est un univers artistique dédié à la musique, au spectacle et à la transmission. Porté par une artiste de scène, le projet est né d’une envie simple&#8239;: créer des moments vivants, partager des émotions et faire de la musique une véritable rencontre avec le public.</p>
+        <p class="cliente">L’hirondelle, symbole de liberté, de joie et de renouveau, représente cet état d’esprit. Elle voyage, revient, se pose et repart, comme la musique, qui accompagne les moments, crée des souvenirs et laisse une empreinte bien après avoir cessé de jouer.</p>
+        <p class="cliente">Notre force&#8239;: une approche profondément humaine de la scène, fondée sur l’écoute, l’adaptation et la relation avec le public. Derrière Le Chant de l’Hirondelle, une équipe de talents réunis autour d’une même envie&#8239;: faire de chaque prestation un moment vivant, sincère et mémorable.</p>
+        <p class="accroche cliente">La musique ne se contente pas de s’écouter. Elle se vit, se partage et se transmet.</p>
+      </div>
+      <div class="duo">
+        <div class="ph r34"><img src="assets/photos/elaia-23.jpg" alt="Elaïa rit en chantant" loading="lazy"></div>
+        <div class="ph r45"><img src="assets/photos/elaia-16.jpg" alt="Elaïa sur scène, micro en main" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="arguments">
+      <div><h3>Gestion de A à Z</h3><p>De la technique au choix de la formation, un seul interlocuteur pour toute l’animation.</p></div>
+      <div><h3>Aide au choix du répertoire</h3><p>Nous construisons avec vous le répertoire qui correspond à vos invités et à votre ambiance.</p></div>
+      <div><h3>Son et lumière</h3><p>La régie son et lumières est assurée par nos soins.</p></div>
+    </div>
+
+    <h3 class="sous-titre">Nos formations en détail</h3>
+    <div class="details">
+      <article class="detail" id="d-elaia"><div class="ph r45"><img src="assets/photos/elaia-7.jpg" alt="Portrait d’Elaïa, souriante, micro en main" loading="lazy"></div><div class="txt"><h3>Elaïa <span class="droit">Babled</span> <span>chanteuse solo</span></h3><p class="cliente">Vous souhaitez offrir à votre public un moment musical qui rassemble, surprend et donne envie de participer&#8239;?</p><p class="cliente">Chanteuse sur bande-son, Elaïa Babled adapte sa prestation à votre événement, entre concert aux styles variés (jazz, chanson française, pop, cabaret et répertoire festif et dansant) et animations interactives.</p><p class="cliente">Blind test, jeux autour de la chanson française ou Juke-box Live&#8239;: autant de façons de créer une ambiance conviviale et de faire de la musique un véritable moment de partage.</p><a class="lien" href="#contact">Demander Elaïa →</a></div></article>
+      <article class="detail" id="d-elael"><div class="ph r45"><img src="assets/photos/generiques/piano-voix.jpg" alt="Chanteuse au piano" loading="lazy"></div><div class="txt"><h3><span class="droit">ElaëL</span> <span>duo piano-voix</span></h3><p class="cliente">Apportez une touche de distinction et d’énergie à vos événements avec notre duo piano-voix. À la fois raffinée et vibrante, cette formule revisite les plus grands standards du jazz, de la musique latino et de la chanson française.</p><p class="cliente">Entre douceur feutrée et rythmes entraînants, le répertoire s’adapte à l’évolution de votre soirée pour offrir à vos invités un moment suspendu, élégant et résolument swing.</p><p class="cliente">Des mélodies feutrées du jazz aux rythmes chaleureux de la bossa nova, en passant par les textes intemporels de la chanson française&#8239;: un répertoire de reprises connues de tous, pour vos vins d’honneur, mariages et soirées professionnelles.</p><a class="lien" href="#contact">Demander ElaëL →</a></div></article>
+      <article class="detail" id="d-rapha"><div class="ph r45"><img src="assets/photos/generiques/duo-guitare-voix.jpg" alt="Duo guitare et voix" loading="lazy"></div><div class="txt"><h3>RaphaElaïa <span>duo guitare-voix</span></h3><p class="cliente">Vous souhaitez proposer à votre public un moment musical chaleureux, festif et fédérateur&#8239;?</p><p class="cliente">Avec deux voix, masculine et féminine, accompagnées à la guitare, RaphaElaïa revisite des chansons populaires dans une ambiance conviviale et entraînante. En concert comme en animation musicale, le duo s’adapte à votre événement pour partager le plaisir de la musique, créer de la complicité et donner envie au public de chanter avec lui.</p><a class="lien" href="#contact">Demander RaphaElaïa →</a></div></article>
+      <article class="detail" id="d-zartistes"><div class="ph r45"><img src="assets/photos/generiques/duo-scene.jpg" alt="Chanteurs sur scène" loading="lazy"></div><div class="txt"><h3>Les Z’artistes <span>5 chanteurs et chanteuses</span></h3><p class="cliente">Une troupe dynamique composée de 3 chanteurs et 2 chanteuses, régulièrement accompagnés de leurs danseuses de cabaret. Ensemble, ils redonnent vie sur bande-son aux plus grands standards qui ont marqué l’histoire de la musique.</p><p class="cliente">Trois spectacles au choix&#8239;: <em>De fil en aiguille</em> (le meilleur de la chanson, des années 70 à aujourd’hui), <em>Flashback</em> (100&#8239;% années 80) et <em>Plumes et Strass</em> (un grand spectacle cabaret).</p><p class="cliente">Parfaitement adaptée aux événements de collectivités (CCAS, comités) et aux soirées privées, la troupe s’adapte à vos contraintes de temps (spectacles de 45&#8239;min à 3&#8239;h) et de configuration. Grâce à notre équipe technique dédiée (son, lumière, régisseurs), nous gérons tout de A à Z.</p><a class="lien" href="#contact">Demander Les Z’artistes →</a></div></article>
+      <article class="detail" id="d-prismagiga"><div class="ph r45"><img src="assets/photos/generiques/groupe-scene.jpg" alt="Groupe pop-rock sur scène" loading="lazy"></div><div class="txt"><h3><span class="droit">PrismaGiga</span> <span>groupe pop-rock et soul</span></h3><p class="cliente">Six musiciens et deux voix féminines d’exception revisitent les plus grands standards du rock, de la pop et de la soul, dans un show 100&#8239;% live, dynamique et fédérateur.</p><p class="cliente">La singularité du projet&#8239;? Un duo de voix féminines à l’énergie contagieuse, soutenu par une section rythmique et instrumentale implacable.</p><p class="cliente">Une formule idéale pour les festivals, les concerts publics, les scènes estivales ou les soirées d’entreprise qui veulent marquer les esprits et faire vibrer les foules.</p><a class="lien" href="#contact">Demander PrismaGiga →</a></div></article>
+    </div>
+
+    <div class="coaching" id="coaching">
+      <div class="photos">
+        <div class="ph r34"><img src="assets/photos/elaia-49.jpg" alt="Elaïa en scène" loading="lazy"></div>
+        <div class="ph r11"><img src="assets/photos/generiques/micro.jpg" alt="Un micro ancien" loading="lazy"></div>
+      </div>
+      <div class="texte">
+        <h2>Coaching vocal et scénique</h2>
+        <p class="accroche cliente">Développer sa voix, affirmer sa présence, oser pleinement s’exprimer.</p>
+        <p class="cliente">Que vous souhaitiez progresser dans votre pratique du chant, gagner en aisance sur scène, préparer une audition ou un spectacle, ou simplement vous sentir plus à l’aise face à un public, votre parcours est unique et mérite un accompagnement qui vous ressemble. Marie-Ange vous accompagne.</p>
+        <p class="cliente">Le coaching vocal et scénique s’adapte à vos envies, à votre niveau et à vos objectifs. Du travail technique de la voix à l’interprétation, en passant par la présence scénique, la confiance en soi et la gestion du trac, chaque séance est pensée en fonction de vos besoins et de votre évolution.</p>
+        <p class="cliente">L’objectif&#8239;: vous aider à développer vos capacités, à trouver votre propre expression et à prendre votre place avec plus de confiance, de liberté et de plaisir.</p>
+        <ul>
+          <li><strong>Poser sa voix</strong><span>Respiration, justesse, confiance. <span class="cliente">Du travail technique de la voix à l’interprétation.</span></span></li>
+          <li><strong>Performance scénique</strong><span>Présence, gestes, rapport au public. <span class="cliente">Au-delà de la technique, il s’agit aussi d’oser, de transmettre une émotion et de créer une véritable connexion avec ceux qui vous écoutent.</span></span></li>
+        </ul>
+        <div class="bas-section"><a class="btn" href="#contact">Demander un coaching <span class="fleche" aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 : ACTUALITÉS -->
+<section class="sec" id="actualites" aria-labelledby="titre-s7">
+  <div class="wrap">
+    <div class="tete"><h2 id="titre-s7">Actualités et prochaines dates</h2><p>Exemples&#8239;: Marie-Ange publiera ici ses dates et nouvelles.</p></div>
+    <div class="actus">
+      <article><div class="ph r32"><img src="assets/photos/elaia-26.jpg" alt="" loading="lazy"></div><time datetime="2026-11-21">Samedi 21 novembre 2026</time><h3>Elaïa en concert</h3><p>Exemple d’actualité, texte à remplacer.</p></article>
+      <article><div class="ph r32"><img src="assets/photos/generiques/rue-en-fete.jpg" alt="" loading="lazy"></div><time datetime="2026-12-12">Samedi 12 décembre 2026</time><h3>Marché de Noël</h3><p>Exemple d’actualité, texte à remplacer.</p></article>
+      <article><div class="ph r32"><img src="assets/photos/generiques/piano-2.jpg" alt="" loading="lazy"></div><time datetime="2027-01-16">Samedi 16 janvier 2027</time><h3>Nouveau&#8239;: ElaëL, le duo piano-voix</h3><p>Exemple d’actualité, texte à remplacer.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8 : CONTACT -->
+<section class="contact" id="contact" aria-labelledby="titre-s8">
+  <div class="wrap grille">
+    <div class="gauche">
+      <h2 id="titre-s8">Parlez-nous de votre événement</h2>
+      <p class="cliente">Vous avez un projet&#8239;? Imaginons ensemble la musique qui lui donnera vie.</p>
+      <p>Marie-Ange vous recontacte pour définir avec vous l’animation la plus adaptée.</p>
+      <p class="coord"><a href="mailto:lechanthirondelle@gmail.com">lechanthirondelle@gmail.com</a><br><a href="tel:+33666415981">06 66 41 59 81</a><br>Pont-Évêque, Isère</p>
+      <div class="ph r32"><img src="assets/photos/elaia-34.jpg" alt="" loading="lazy"></div>
+    </div>
+    <form id="form" action="mailto:lechanthirondelle@gmail.com" method="post" enctype="text/plain">
+      <fieldset>
+        <legend>Votre demande concerne</legend>
+        <div class="cases">
+          <label><input type="radio" name="type" value="Un événement privé" required> Un événement privé</label>
+          <label><input type="radio" name="type" value="Un événement collectif"> Un événement collectif</label>
+          <label><input type="radio" name="type" value="Un bar ou un restaurant"> Un bar ou un restaurant</label>
+          <label><input type="radio" name="type" value="Un coaching vocal"> Un coaching vocal</label>
+        </div>
+      </fieldset>
+      <div class="champ"><label for="desc">Décrivez votre événement</label><textarea id="desc" name="description" required></textarea></div>
+      <div class="champ"><label for="formation">Une formation vous intéresse&#8239;?</label><small>Facultatif&#8239;: nous en parlerons ensemble.</small>
+        <select id="formation" name="formation"><option>Je ne sais pas encore</option><option>Elaïa</option><option>ElaëL (duo piano-voix)</option><option>RaphaElaïa</option><option>Les Z’artistes</option><option>PrismaGiga</option></select></div>
+      <div class="deux">
+        <div class="champ"><label for="date">Date de l’événement</label><input id="date" name="date" type="date"></div>
+        <div class="champ"><label for="lieu">Lieu de l’événement</label><input id="lieu" name="lieu" type="text" autocomplete="address-level2"></div>
+        <div class="champ"><label for="mail">E-mail</label><input id="mail" name="email" type="email" autocomplete="email" required></div>
+        <div class="champ"><label for="tel">Téléphone</label><input id="tel" name="telephone" type="tel" autocomplete="tel"></div>
+      </div>
+      <button class="btn" type="submit">Envoyer ma demande <span class="fleche" aria-hidden="true">→</span></button>
+    </form>
+  </div>
+</section>
+</main>
+<p class="legende-cliente" aria-hidden="true">En orange&#8239;: textes de la cliente (27/10)</p>
+
+<footer class="pied">
+  <div class="wrap">
+    <div class="grille">
+      <p class="nom">Le Chant de l’Hirondelle<small>Animation musicale et coaching vocal.</small></p>
+      <div><h4>Contact</h4><a href="mailto:lechanthirondelle@gmail.com">lechanthirondelle@gmail.com</a><br><a href="tel:+33666415981">06 66 41 59 81</a><br>47b Montée Lucien Magnat<br>38780 Pont-Évêque</div>
+      <div><h4>Animations</h4><a href="#prive">Événements privés</a><br><a href="#collectif">Mairies &amp; EHPAD</a><br><a href="#bars">Bars &amp; restaurants</a><br><a href="#coaching">Coaching vocal</a></div>
+      <div><h4>Le site</h4><a href="#qui">Qui sommes-nous</a><br><a href="#actualites">Actualités</a><br><a href="#">Mentions légales</a></div>
+    </div>
+    <div class="mentions"><span>© 2026 Le Chant de l’Hirondelle</span><span>Photos provisoires : Elaïa en concert et images libres de Wikimedia Commons</span></div>
+  </div>
+</footer>
+
+<script>
+// menu mobile
+const burger=document.querySelector('.burger'),menu=document.getElementById('menu-mobile');
+burger.addEventListener('click',()=>{const o=menu.classList.toggle('ouvert');burger.setAttribute('aria-expanded',o);burger.textContent=o?'Fermer':'Menu'});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('ouvert');burger.setAttribute('aria-expanded','false');burger.textContent='Menu'}));
+// carrousel
+const car=document.querySelector('.car');
+document.querySelectorAll('[data-car]').forEach(b=>b.addEventListener('click',()=>{const w=car.querySelector('article').offsetWidth+32;car.scrollBy({left:w*+b.dataset.car,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}));
+// onglets
+const tabs=[...document.querySelectorAll('[role=tab]')];
+function choisir(t){tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on})}
+tabs.forEach((t,i)=>{t.addEventListener('click',()=>choisir(t));t.addEventListener('keydown',e=>{const d=e.key==='ArrowDown'||e.key==='ArrowRight'?1:e.key==='ArrowUp'||e.key==='ArrowLeft'?-1:0;if(d){e.preventDefault();const n=tabs[(i+d+tabs.length)%tabs.length];n.focus();choisir(n)}})});
+// formulaire -> mailto
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const corps=[['Demande',f.get('type')],['Événement',f.get('description')],['Formation',f.get('formation')],['Date',f.get('date')],['Lieu',f.get('lieu')],['E-mail',f.get('email')],['Téléphone',f.get('telephone')]].map(([k,v])=>k+' : '+(v||'')).join('\n');location.href='mailto:lechanthirondelle@gmail.com?subject='+encodeURIComponent('Demande d’animation : '+f.get('type'))+'&body='+encodeURIComponent(corps)});
+</script>
+</body>
+</html>
