@@ -211,6 +211,8 @@ details[open]>summary .plus::after{transform:rotate(0)}
 
 /* section 7 */
 .actus{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+/* Affiches des dates : format A (portrait), en couleur. Les photos d’exemple restent en gris. */
+.affiche{aspect-ratio:1/1.414}.affiche img{filter:none}.affiche img.exemple{filter:grayscale(1) contrast(1.04)}
 .actus time{display:block;margin-top:var(--s2);font-size:15px;color:var(--gris);font-variant-numeric:tabular-nums}
 .actus h3{font-size:24px;margin-top:4px}
 .actus p{margin-top:6px;font-size:16px;color:var(--gris)}
@@ -379,7 +381,7 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
       </div>
       <div class="photos">
         <div class="ph r45 grande"><img src="assets/photos/elaia-12.jpg" alt="Elaïa chante sur scène, micro à la main" width="1600" height="1600"></div>
-        <div class="ph r11 petite"><img src="assets/photos/elaia-36.jpg" alt="Elaïa sourit en chantant" width="1600" height="1600"></div>
+        <div class="ph r11 petite"><img src="assets/photos/elaia-43.jpg" alt="Elaïa chante sur scène, micro en main" width="1600" height="1600"></div>
         <p class="legende">Elaïa en concert · photos provisoires</p>
       </div>
     </div>
@@ -408,7 +410,7 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
         <p>mariage, anniversaire, fête de famille ou d’entreprise</p>
       </a>
       <a href="#collectif">
-        <div class="ph r34"><img src="assets/photos/generiques/rue-en-fete.jpg" alt="" loading="lazy"></div>
+        <div class="ph r34"><img src="assets/photos/generiques/spectacle-foule.jpg" alt="" loading="lazy" style="object-position:40% 50%"></div>
         <h3>Un événement collectif <span class="fleche" aria-hidden="true">→</span></h3>
         <p>commune, CCAS, EHPAD, association, comité des fêtes</p>
       </a>
@@ -418,7 +420,7 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
         <p>ambiance lounge ou festive</p>
       </a>
       <a href="#coaching">
-        <div class="ph r34"><img src="assets/photos/generiques/micro.jpg" alt="" loading="lazy"></div>
+        <div class="ph r34"><img src="assets/photos/generiques/atelier-chant.jpg" alt="" loading="lazy" style="object-position:28% 50%"></div>
         <h3>Un coaching vocal <span class="fleche" aria-hidden="true">→</span></h3>
         <p>poser votre voix, gagner en aisance sur scène</p>
       </a>
@@ -438,7 +440,7 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
         <p>De l’élégance d’un piano-voix pour accompagner un cocktail ou un dîner, à une ambiance plus chaleureuse et festive pour faire vivre votre soirée, chaque prestation trouve sa juste place dans l’événement.</p>
         <div class="publics">
           <div>
-            <div class="ph r32"><img src="assets/photos/elaia-19.jpg" alt="" loading="lazy"></div>
+            <div class="ph r32"><img src="assets/photos/elaia-studio-17.jpg" alt="" loading="lazy" style="object-position:50% 12%"></div>
             <h3>Pour les particuliers</h3>
             <ul>
               <li><details><summary><span class="ev">Mariage</span><span class="plus" aria-hidden="true"></span></summary><p>Du vin d’honneur à la soirée dansante&#8239;: un piano-voix pour le cocktail, puis une ambiance plus festive pour faire danser vos invités.</p></details></li>
@@ -447,7 +449,7 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
             </ul>
           </div>
           <div>
-            <div class="ph r32"><img src="assets/photos/generiques/soiree-entreprise.jpg" alt="" loading="lazy"></div>
+            <div class="ph r32"><img src="assets/photos/generiques/cocktail-entreprise.jpg" alt="" loading="lazy"></div>
             <h3>Pour les entreprises</h3>
             <ul>
               <li><details><summary><span class="ev">Fête de fin d’année</span><span class="plus" aria-hidden="true"></span></summary><p>Une soirée pour remercier vos équipes, du duo au grand spectacle cabaret, selon votre lieu et vos envies.</p></details></li>
@@ -471,8 +473,8 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
       <article><div class="ph r45"><img src="assets/photos/elaia-9.jpg" alt="Elaïa chante en souriant" loading="lazy"></div><h3>Elaïa</h3><span class="genre">Festive et jazzy</span><p>Une animation musicale élégante et chaleureuse, portée par une présence vocale singulière, entre émotion, proximité et énergie.</p><a class="lien" href="#d-elaia">Découvrir Elaïa →</a></article>
       <article><div class="ph r45"><img src="assets/photos/generiques/piano-voix.jpg" alt="Une chanteuse au piano" loading="lazy"></div><h3>ElaëL</h3><span class="genre">Duo piano-voix</span><p>Un duo piano-voix élégant et complice pour faire swinguer vos cocktails, mariages et événements d’entreprise.</p><a class="lien" href="#d-elael">Découvrir ElaëL →</a></article>
       <article><div class="ph r45"><img src="assets/photos/generiques/duo-guitare-voix.jpg" alt="Un duo guitare et voix" loading="lazy"></div><h3>RaphaElaïa</h3><span class="genre">Festive et populaire</span><p>Une animation musicale festive et conviviale, portée par deux voix complices et une guitare, autour de chansons populaires et de reprises entraînantes, pour faire chanter et vibrer votre public.</p><a class="lien" href="#d-rapha">Découvrir RaphaElaïa →</a></article>
-      <article><div class="ph r45"><img src="assets/photos/generiques/duo-scene.jpg" alt="Des chanteurs sur scène" loading="lazy"></div><h3>Les Z’artistes</h3><span class="genre">Cabaret</span><p>5 chanteurs, des danseuses cabaret et 3 spectacles thématiques pour enflammer vos événements en totale autonomie.</p><a class="lien" href="#d-zartistes">Découvrir Les Z’artistes →</a></article>
-      <article><div class="ph r45"><img src="assets/photos/generiques/groupe-scene.jpg" alt="Un groupe pop-rock sur scène" loading="lazy"></div><h3>PrismaGiga</h3><span class="genre">Pop-rock et soul</span><p>Un groupe de 6 musiciens et deux voix féminines explosives pour un show pop-rock et soul 100&#8239;% live.</p><a class="lien" href="#d-prismagiga">Découvrir PrismaGiga →</a></article>
+      <article><div class="ph r45"><img src="assets/photos/zartistes-troupe.jpg" alt="La troupe des Z’artistes, souriante, en t-shirts à son nom" loading="lazy"></div><h3>Les Z’artistes</h3><span class="genre">Cabaret</span><p>5 chanteurs, des danseuses cabaret et 3 spectacles thématiques pour enflammer vos événements en totale autonomie.</p><a class="lien" href="#d-zartistes">Découvrir Les Z’artistes →</a></article>
+      <article><div class="ph r45"><img src="assets/photos/prismagiga-guinguette.jpg" alt="PrismaGiga en concert sous les barnums d’une guinguette" style="object-position:88% 50%" loading="lazy"></div><h3>PrismaGiga</h3><span class="genre">Pop-rock et soul</span><p>Un groupe de 6 musiciens et deux voix féminines explosives pour un show pop-rock et soul 100&#8239;% live.</p><a class="lien" href="#d-prismagiga">Découvrir PrismaGiga →</a></article>
     </div>
     <div class="bas-section"><a class="btn" href="#contact">Demander une animation <span class="fleche" aria-hidden="true">→</span></a></div>
   </div>
@@ -496,7 +498,7 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
             <p class="sous-public">Mairie&nbsp;· CCAS&nbsp;· EHPAD</p>
           </div>
           <div>
-            <div class="ph r32"><img src="assets/photos/generiques/groupe-scene-2.jpg" alt="" loading="lazy"></div>
+            <div class="ph r32"><img src="assets/photos/elaia-studio-41.jpg" alt="" loading="lazy" style="object-position:50% 18%"></div>
             <h3>Pour les associations</h3>
             <p class="sous-public">Comité des fêtes&nbsp;· Gala d’association&nbsp;· MJC</p>
           </div>
@@ -512,8 +514,8 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
       <article><div class="ph r45"><img src="assets/photos/elaia-41.jpg" alt="Elaïa sur scène" loading="lazy"></div><h3>Elaïa</h3><span class="genre">Chanteuse solo</span><p>Pour un repas des anciens, une fête des voisins ou un après-midi en EHPAD. Entre concert et animations interactives&#8239;: blind test, jeux autour de la chanson française ou Juke-box Live.</p><a class="lien" href="#d-elaia">Découvrir Elaïa →</a></article>
       <article><div class="ph r45"><img src="assets/photos/generiques/piano-2.jpg" alt="Un pianiste chante" loading="lazy"></div><h3>ElaëL</h3><span class="genre">Duo piano-voix</span><p>Le raffinement du jazz et la chaleur des rythmes latinos au cœur d’un duo piano-voix unique pour sublimer vos plus beaux événements.</p><a class="lien" href="#d-elael">Découvrir ElaëL →</a></article>
       <article><div class="ph r45"><img src="assets/photos/generiques/duo-guitare-voix.jpg" alt="Duo guitare et voix" loading="lazy"></div><h3>RaphaElaïa</h3><span class="genre">Duo guitare-voix</span><p>Pour un marché d’été ou un bal de village, des rythmes populaires que tout le monde reprend. <span>Le duo intervient aussi en EHPAD.</span> En concert comme en animation musicale, le duo donne envie au public de chanter avec lui.</p><a class="lien" href="#d-rapha">Découvrir RaphaElaïa →</a></article>
-      <article><div class="ph r45"><img src="assets/photos/generiques/duo-scene.jpg" alt="Chanteurs sur scène" loading="lazy"></div><h3>Les Z’artistes</h3><span class="genre">5 chanteurs et chanteuses</span><p>Toute la magie du spectacle vivant et des grands standards de la chanson réunis dans un show clé en main.</p><a class="lien" href="#d-zartistes">Découvrir Les Z’artistes →</a></article>
-      <article><div class="ph r45"><img src="assets/photos/generiques/groupe-scene-2.jpg" alt="Groupe sur scène" loading="lazy"></div><h3>PrismaGiga</h3><span class="genre">Groupe pop-rock et soul</span><p>L’électricité du rock et le groove de la soul réunis dans un spectacle live puissant porté par un duo vocal féminin.</p><a class="lien" href="#d-prismagiga">Découvrir PrismaGiga →</a></article>
+      <article><div class="ph r45"><img src="assets/photos/zartistes-troupe.jpg" alt="La troupe des Z’artistes, souriante, en t-shirts à son nom" loading="lazy"></div><h3>Les Z’artistes</h3><span class="genre">5 chanteurs et chanteuses</span><p>Toute la magie du spectacle vivant et des grands standards de la chanson réunis dans un show clé en main.</p><a class="lien" href="#d-zartistes">Découvrir Les Z’artistes →</a></article>
+      <article><div class="ph r45"><img src="assets/photos/prismagiga-guinguette.jpg" alt="PrismaGiga en concert sous les barnums d’une guinguette" style="object-position:88% 50%" loading="lazy"></div><h3>PrismaGiga</h3><span class="genre">Groupe pop-rock et soul</span><p>L’électricité du rock et le groove de la soul réunis dans un spectacle live puissant porté par un duo vocal féminin.</p><a class="lien" href="#d-prismagiga">Découvrir PrismaGiga →</a></article>
     </div>
     <div class="bas-section"><a class="btn" href="#contact">Demander une animation <span class="fleche" aria-hidden="true">→</span></a></div>
   </div>
@@ -540,8 +542,8 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
       <article><div class="ph r45"><img src="assets/photos/generiques/piano-voix.jpg" alt="Chanteuse au piano" loading="lazy"></div><h3>ElaëL</h3><span class="genre">Duo piano-voix</span><p>Pour un dîner ou un apéritif, un fond musical élégant qui laisse parler vos clients&#8239;: jazz latino et variété française. Des mélodies feutrées du jazz aux rythmes chaleureux de la bossa nova.</p><a class="lien" href="#d-elael">Découvrir ElaëL →</a></article>
       <article><div class="ph r45"><img src="assets/photos/elaia-31.jpg" alt="Elaïa chante, bras tendu" loading="lazy"></div><h3>Elaïa</h3><span class="genre">Festive et jazzy</span><p>Une voix et une bande-son, une installation légère qui tient dans un coin de salle. Blind test, jeux autour de la chanson française ou Juke-box Live&#8239;: autant de façons de créer une ambiance conviviale.</p><a class="lien" href="#d-elaia">Découvrir Elaïa →</a></article>
       <article><div class="ph r45"><img src="assets/photos/generiques/duo-guitare-voix.jpg" alt="Duo guitare et voix" loading="lazy"></div><h3>RaphaElaïa</h3><span class="genre">Festive et populaire</span><p>Guitare et deux voix pour une soirée festive en terrasse. Des chansons populaires et des reprises entraînantes, pour faire chanter et vibrer vos clients.</p><a class="lien" href="#d-rapha">Découvrir RaphaElaïa →</a></article>
-      <article><div class="ph r45"><img src="assets/photos/generiques/duo-scene.jpg" alt="Chanteurs sur scène" loading="lazy"></div><h3>Les Z’artistes</h3><span class="genre">Cabaret</span><p>Une soirée cabaret pour les grandes salles. Trois spectacles au choix&#8239;: <em>De fil en aiguille</em>, <em>Flashback</em> (100&#8239;% années 80) ou <em>Plumes et Strass</em>.</p><a class="lien" href="#d-zartistes">Découvrir Les Z’artistes →</a></article>
-      <article><div class="ph r45"><img src="assets/photos/generiques/groupe-scene.jpg" alt="Groupe sur scène" loading="lazy"></div><h3>PrismaGiga</h3><span class="genre">Pop-rock et soul</span><p>Pop, rock et soul pour les bars qui ont une scène. Six musiciens et deux voix féminines pour un show 100&#8239;% live.</p><a class="lien" href="#d-prismagiga">Découvrir PrismaGiga →</a></article>
+      <article><div class="ph r45"><img src="assets/photos/zartistes-troupe.jpg" alt="La troupe des Z’artistes, souriante, en t-shirts à son nom" loading="lazy"></div><h3>Les Z’artistes</h3><span class="genre">Cabaret</span><p>Une soirée cabaret pour les grandes salles. Trois spectacles au choix&#8239;: <em>De fil en aiguille</em>, <em>Flashback</em> (100&#8239;% années 80) ou <em>Plumes et Strass</em>.</p><a class="lien" href="#d-zartistes">Découvrir Les Z’artistes →</a></article>
+      <article><div class="ph r45"><img src="assets/photos/prismagiga-guinguette.jpg" alt="PrismaGiga en concert sous les barnums d’une guinguette" style="object-position:88% 50%" loading="lazy"></div><h3>PrismaGiga</h3><span class="genre">Pop-rock et soul</span><p>Pop, rock et soul pour les bars qui ont une scène. Six musiciens et deux voix féminines pour un show 100&#8239;% live.</p><a class="lien" href="#d-prismagiga">Découvrir PrismaGiga →</a></article>
     </div>
     <div class="bas-section"><a class="btn" href="#contact">Demander une animation <span class="fleche" aria-hidden="true">→</span></a></div>
   </div>
@@ -560,7 +562,7 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
       </div>
       <div class="duo">
         <div class="ph r34"><img src="assets/photos/elaia-23.jpg" alt="Elaïa rit en chantant" loading="lazy"></div>
-        <div class="ph r45"><img src="assets/photos/elaia-16.jpg" alt="Elaïa sur scène, micro en main" loading="lazy"></div>
+        <div class="ph r45"><img src="assets/photos/elaia-studio-66.jpg" alt="Elaïa chante, bras levé" loading="lazy"></div>
       </div>
     </div>
     <div class="arguments">
@@ -574,13 +576,13 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
       <article class="detail" id="d-elaia"><div class="ph r45"><img src="assets/photos/elaia-7.jpg" alt="Portrait d’Elaïa, souriante, micro en main" loading="lazy"></div><div class="txt"><h3>Elaïa <span class="droit">Babled</span> <span>chanteuse solo</span></h3><p>Vous souhaitez offrir à votre public un moment musical qui rassemble, surprend et donne envie de participer&#8239;?</p><p>Chanteuse sur bande-son, Elaïa Babled adapte sa prestation à votre événement, entre concert aux styles variés (jazz, chanson française, pop, cabaret et répertoire festif et dansant) et animations interactives.</p><p>Blind test, jeux autour de la chanson française ou Juke-box Live&#8239;: autant de façons de créer une ambiance conviviale et de faire de la musique un véritable moment de partage.</p><a class="lien" href="#contact">Demander Elaïa →</a></div></article>
       <article class="detail" id="d-elael"><div class="ph r45"><img src="assets/photos/generiques/piano-voix.jpg" alt="Chanteuse au piano" loading="lazy"></div><div class="txt"><h3><span class="droit">ElaëL</span> <span>duo piano-voix</span></h3><p>Apportez une touche de distinction et d’énergie à vos événements avec notre duo piano-voix. À la fois raffinée et vibrante, cette formule revisite les plus grands standards du jazz, de la musique latino et de la chanson française.</p><p>Entre douceur feutrée et rythmes entraînants, le répertoire s’adapte à l’évolution de votre soirée pour offrir à vos invités un moment suspendu, élégant et résolument swing.</p><p>Des mélodies feutrées du jazz aux rythmes chaleureux de la bossa nova, en passant par les textes intemporels de la chanson française&#8239;: un répertoire de reprises connues de tous, pour vos vins d’honneur, mariages et soirées professionnelles.</p><a class="lien" href="#contact">Demander ElaëL →</a></div></article>
       <article class="detail" id="d-rapha"><div class="ph r45"><img src="assets/photos/generiques/duo-guitare-voix.jpg" alt="Duo guitare et voix" loading="lazy"></div><div class="txt"><h3>RaphaElaïa <span>duo guitare-voix</span></h3><p>Vous souhaitez proposer à votre public un moment musical chaleureux, festif et fédérateur&#8239;?</p><p>Avec deux voix, masculine et féminine, accompagnées à la guitare, RaphaElaïa revisite des chansons populaires dans une ambiance conviviale et entraînante. En concert comme en animation musicale, le duo s’adapte à votre événement pour partager le plaisir de la musique, créer de la complicité et donner envie au public de chanter avec lui.</p><a class="lien" href="#contact">Demander RaphaElaïa →</a></div></article>
-      <article class="detail" id="d-zartistes"><div class="ph r45"><img src="assets/photos/generiques/duo-scene.jpg" alt="Chanteurs sur scène" loading="lazy"></div><div class="txt"><h3>Les Z’artistes <span>5 chanteurs et chanteuses</span></h3><p>Une troupe dynamique composée de 3 chanteurs et 2 chanteuses, régulièrement accompagnés de leurs danseuses de cabaret. Ensemble, ils redonnent vie sur bande-son aux plus grands standards qui ont marqué l’histoire de la musique.</p><p>Trois spectacles au choix&#8239;: <em>De fil en aiguille</em> (le meilleur de la chanson, des années 70 à aujourd’hui), <em>Flashback</em> (100&#8239;% années 80) et <em>Plumes et Strass</em> (un grand spectacle cabaret).</p><p>Parfaitement adaptée aux événements de collectivités (CCAS, comités) et aux soirées privées, la troupe s’adapte à vos contraintes de temps (spectacles de 45&#8239;min à 3&#8239;h) et de configuration. Grâce à notre équipe technique dédiée (son, lumière, régisseurs), nous gérons tout de A à Z.</p><a class="lien" href="#contact">Demander Les Z’artistes →</a></div></article>
-      <article class="detail" id="d-prismagiga"><div class="ph r45"><img src="assets/photos/generiques/groupe-scene.jpg" alt="Groupe pop-rock sur scène" loading="lazy"></div><div class="txt"><h3><span class="droit">PrismaGiga</span> <span>groupe pop-rock et soul</span></h3><p>Six musiciens et deux voix féminines d’exception revisitent les plus grands standards du rock, de la pop et de la soul, dans un show 100&#8239;% live, dynamique et fédérateur.</p><p>La singularité du projet&#8239;? Un duo de voix féminines à l’énergie contagieuse, soutenu par une section rythmique et instrumentale implacable.</p><p>Une formule idéale pour les festivals, les concerts publics, les scènes estivales ou les soirées d’entreprise qui veulent marquer les esprits et faire vibrer les foules.</p><a class="lien" href="#contact">Demander PrismaGiga →</a></div></article>
+      <article class="detail" id="d-zartistes"><div class="ph r45"><img src="assets/photos/zartistes-troupe.jpg" alt="La troupe des Z’artistes, souriante, en t-shirts à son nom" loading="lazy"></div><div class="txt"><h3>Les Z’artistes <span>5 chanteurs et chanteuses</span></h3><p>Une troupe dynamique composée de 3 chanteurs et 2 chanteuses, régulièrement accompagnés de leurs danseuses de cabaret. Ensemble, ils redonnent vie sur bande-son aux plus grands standards qui ont marqué l’histoire de la musique.</p><p>Trois spectacles au choix&#8239;: <em>De fil en aiguille</em> (le meilleur de la chanson, des années 70 à aujourd’hui), <em>Flashback</em> (100&#8239;% années 80) et <em>Plumes et Strass</em> (un grand spectacle cabaret).</p><p>Parfaitement adaptée aux événements de collectivités (CCAS, comités) et aux soirées privées, la troupe s’adapte à vos contraintes de temps (spectacles de 45&#8239;min à 3&#8239;h) et de configuration. Grâce à notre équipe technique dédiée (son, lumière, régisseurs), nous gérons tout de A à Z.</p><a class="lien" href="#contact">Demander Les Z’artistes →</a></div></article>
+      <article class="detail" id="d-prismagiga"><div class="ph r45"><img src="assets/photos/prismagiga-guinguette.jpg" alt="PrismaGiga en concert sous les barnums d’une guinguette" style="object-position:88% 50%" loading="lazy"></div><div class="txt"><h3><span class="droit">PrismaGiga</span> <span>groupe pop-rock et soul</span></h3><p>Six musiciens et deux voix féminines d’exception revisitent les plus grands standards du rock, de la pop et de la soul, dans un show 100&#8239;% live, dynamique et fédérateur.</p><p>La singularité du projet&#8239;? Un duo de voix féminines à l’énergie contagieuse, soutenu par une section rythmique et instrumentale implacable.</p><p>Une formule idéale pour les festivals, les concerts publics, les scènes estivales ou les soirées d’entreprise qui veulent marquer les esprits et faire vibrer les foules.</p><a class="lien" href="#contact">Demander PrismaGiga →</a></div></article>
     </div>
 
     <div class="coaching" id="coaching">
       <div class="photos">
-        <div class="ph r34"><img src="assets/photos/elaia-49.jpg" alt="Elaïa en scène" loading="lazy"></div>
+        <div class="ph r34"><img src="assets/photos/elaia-studio-25.jpg" alt="Elaïa sourit, les yeux fermés" loading="lazy" style="object-position:50% 20%"></div>
         <div class="ph r11"><img src="assets/photos/generiques/micro.jpg" alt="Un micro ancien" loading="lazy"></div>
       </div>
       <div class="texte">
@@ -602,11 +604,11 @@ legend,.champ label{display:block;font:500 15px var(--sans);color:rgba(242,241,2
 <!-- SECTION 7 : ACTUALITÉS -->
 <section class="sec" id="actualites" aria-labelledby="titre-s7">
   <div class="wrap">
-    <div class="tete"><h2 id="titre-s7">Actualités et prochaines dates</h2><p>Exemples&#8239;: Marie-Ange publiera ici ses dates et nouvelles.</p></div>
+    <div class="tete"><h2 id="titre-s7">Actualités et prochaines dates</h2><p>Exemples&#8239;: Marie-Ange publiera ici les affiches de ses prochaines dates.</p></div>
     <div class="actus">
-      <article><div class="ph r32"><img src="assets/photos/elaia-26.jpg" alt="" loading="lazy"></div><time datetime="2026-11-21">Samedi 21 novembre 2026</time><h3>Elaïa en concert</h3><p>Exemple d’actualité, texte à remplacer.</p></article>
-      <article><div class="ph r32"><img src="assets/photos/generiques/rue-en-fete.jpg" alt="" loading="lazy"></div><time datetime="2026-12-12">Samedi 12 décembre 2026</time><h3>Marché de Noël</h3><p>Exemple d’actualité, texte à remplacer.</p></article>
-      <article><div class="ph r32"><img src="assets/photos/generiques/piano-2.jpg" alt="" loading="lazy"></div><time datetime="2027-01-16">Samedi 16 janvier 2027</time><h3>Nouveau&#8239;: ElaëL, le duo piano-voix</h3><p>Exemple d’actualité, texte à remplacer.</p></article>
+      <article><div class="ph affiche"><img class="exemple" src="assets/photos/elaia-26.jpg" alt="" loading="lazy"></div><time datetime="2026-11-21">Samedi 21 novembre 2026</time><h3>Elaïa en concert</h3><p>Exemple d’actualité, texte à remplacer.</p></article>
+      <article><div class="ph affiche"><img class="exemple" src="assets/photos/generiques/rue-en-fete.jpg" alt="" loading="lazy"></div><time datetime="2026-12-12">Samedi 12 décembre 2026</time><h3>Marché de Noël</h3><p>Exemple d’actualité, texte à remplacer.</p></article>
+      <article><div class="ph affiche"><img class="exemple" src="assets/photos/generiques/piano-2.jpg" alt="" loading="lazy"></div><time datetime="2027-01-16">Samedi 16 janvier 2027</time><h3>Nouveau&#8239;: ElaëL, le duo piano-voix</h3><p>Exemple d’actualité, texte à remplacer.</p></article>
     </div>
   </div>
 </section>

@@ -16,3 +16,9 @@
 Lully, Jean-Baptiste (1632-1687). Comp — Public domain — https://commons.wikimedia.org/wiki/File:Petite_Anthologie_des_maitres_de_la_musique_depuis_1633_jusqu%27%C3%A0_nos_jours._Ouvrage_comprenant_71_morceaux_de_chant_pour_voix_d%27enfants,_solos,_duos_et_choeurs_avec_arrangement_facile_pour_piano,_un..._-_bpt6k315772j_(060_of_188).jpg
 - `micro.jpg` : File:Shure 520DX Green Bullet - Dynamic Harmonica Microphone, along with microphone volume knob on Gibson Kalamazoo amplifier model KEH-....jpg — Ky — CC BY 2.0 — https://commons.wikimedia.org/wiki/File:Shure_520DX_Green_Bullet_-_Dynamic_Harmonica_Microphone,_along_with_microphone_volume_knob_on_Gibson_Kalamazoo_amplifier_model_KEH-....jpg
 - `soiree-entreprise.jpg` : File:BlogHer Cocktail Party @ Ruby Skye.jpg — The Dana Files from Plover — CC BY 2.0 — https://commons.wikimedia.org/wiki/File:BlogHer_Cocktail_Party_@_Ruby_Skye.jpg
+
+## Ajouts du 21/11/2026 (retour photos de Marie-Ange, provisoires « dans ce goût-là »)
+
+- `spectacle-foule.jpg` (sélecteur « événement collectif ») : File:Dance Yrself Clean (2010-04-16 by Ian T. McFarland).jpg — Ian T. McFarland — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File:Dance_Yrself_Clean_(2010-04-16_by_Ian_T._McFarland).jpg
+- `atelier-chant.jpg` (sélecteur « coaching ») : Liane Carroll vocal workshop, Southport Jazz Festival 2017 — Imagine Bill — CC BY 2.0 — https://www.flickr.com/photos/35721191@N08/32419499920
+- `cocktail-entreprise.jpg` (S3 « pour les entreprises ») : Latin America Business Networking reception — Foreign and Commonwealth Office — CC BY 2.0 — https://www.flickr.com/photos/10246637@N04/8771725538
